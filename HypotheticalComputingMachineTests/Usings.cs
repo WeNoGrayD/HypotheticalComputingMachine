@@ -1,0 +1,5 @@
+global using Microsoft.VisualStudio.TestTools.UnitTesting;
+global using HypotheticalComputingMachineClassLib.HCMModel_D1;
+global using HypotheticalComputingMachineClassLib.HypotheticalComputingMachineModel;
+global using System.Collections;
+
