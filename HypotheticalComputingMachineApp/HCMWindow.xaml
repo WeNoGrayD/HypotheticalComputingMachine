@@ -33,8 +33,6 @@
 
         <Style x:Key="MemCellStyle">
             <Style.Triggers>
-                <StaticResource ResourceKey="ErrorTooltip"/>
-                <StaticResource ResourceKey="NoTooltip"/>
                 <DataTrigger Binding="{Binding Path=Register.HasBeenUpdated}" Value="True">
                     <DataTrigger.Setters>
                         <StaticResource ResourceKey="UpdatedRegForegroundSetter"/>
@@ -47,6 +45,13 @@
                         <StaticResource ResourceKey="StandardRegFontWeightSetter"/>
                     </DataTrigger.Setters>
                 </DataTrigger>
+            </Style.Triggers>
+        </Style>
+        
+        <Style x:Key="EditingMemCellStyle">
+            <Style.Triggers>
+                <StaticResource ResourceKey="ErrorTooltip"/>
+                <StaticResource ResourceKey="NoTooltip"/>
             </Style.Triggers>
         </Style>
 
@@ -610,7 +615,8 @@
                         <DataGridTextColumn Header="Значение"
                                             Width="34*"
                                             IsReadOnly="False"
-                                            CellStyle="{StaticResource ResourceKey=MemCellStyle}">
+                                            CellStyle="{StaticResource ResourceKey=MemCellStyle}"
+                                            EditingElementStyle="{StaticResource ResourceKey=EditingMemCellStyle}">
                             <DataGridTextColumn.Binding>
                                 <Binding Path="Reg"
                                          Mode="TwoWay" 
@@ -724,7 +730,8 @@
                         <DataGridTextColumn Header="Значение"
                                             Width="34*"
                                             IsReadOnly="False"
-                                            CellStyle="{StaticResource ResourceKey=MemCellStyle}">
+                                            CellStyle="{StaticResource ResourceKey=MemCellStyle}"
+                                            EditingElementStyle="{StaticResource ResourceKey=EditingMemCellStyle}">
                             <DataGridTextColumn.Binding>
                                 <Binding Path="Reg"
                                          Mode="TwoWay" 

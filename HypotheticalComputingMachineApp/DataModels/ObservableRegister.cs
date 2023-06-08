@@ -78,7 +78,7 @@ namespace HypotheticalComputingMachineApp.DataModels
                 unsetUpdated = () =>
                 {
                     program.CommandHasBeenExecuted -= unsetUpdated;
-                    if (program.State != ProgramState.RunningTilEnd)
+                    if (((byte)program.State & 0b10) == 0)
                     {
                         HasBeenUpdated = false;
                         //_hasbeenUpdated = false;
