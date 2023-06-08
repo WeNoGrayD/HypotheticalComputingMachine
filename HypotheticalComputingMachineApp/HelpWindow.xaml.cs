@@ -19,14 +19,27 @@ namespace HypotheticalComputingMachineApp
     /// </summary>
     public partial class HelpWindow : Window
     {
+        public bool ShallBeTerminated = false;
+
         public HelpWindow()
         {
             InitializeComponent();
+            this.Closing += HideOnClosing;
+        }
+
+        public void HideOnClosing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (ShallBeTerminated) return;
+
+            e.Cancel = true;
+            this.Visibility = Visibility.Hidden;
+
+            return;
         }
 
         public void FillHelp(string helpText)
         {
-            txtbHelp.Content = helpText;
+            txtbHelp.Text = helpText;
 
             return;
         }

@@ -64,6 +64,17 @@ namespace HypotheticalComputingMachineApp
             BindViewAndModel();
         }
 
+        public void OnClosing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (_winHelp.IsValueCreated)
+            {
+                WinHelp.ShallBeTerminated = true;
+                WinHelp.Close();
+            }
+
+            return;
+        }
+
         private void InitConvertersAndValidationRules()
         {
             ResourceDictionary converters = new ResourceDictionary();
@@ -186,13 +197,17 @@ namespace HypotheticalComputingMachineApp
 
         public void InvokeHelp(object sender, RoutedEventArgs e) 
         {
-            string helpFilePath = "HypotheticalComputingMachineApp.Help.Help.txt";
-            using (var helpFile = Assembly.GetExecutingAssembly().GetManifestResourceStream(helpFilePath))
-            using (StreamReader reader = new StreamReader(helpFile))
+            if (!_winHelp.IsValueCreated)
             {
-                WinHelp.FillHelp(reader.ReadToEnd());
-                WinHelp.Show();
+                string helpFilePath = "HypotheticalComputingMachineApp.Help.Help.txt";
+                using (var helpFile = Assembly.GetExecutingAssembly().GetManifestResourceStream(helpFilePath))
+                using (StreamReader reader = new StreamReader(helpFile))
+                {
+                    WinHelp.FillHelp(reader.ReadToEnd());
+                }
             }
+
+            WinHelp.Show();
 
             return; 
         }

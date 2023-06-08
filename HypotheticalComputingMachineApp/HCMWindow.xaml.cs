@@ -33,6 +33,15 @@ namespace HypotheticalComputingMachine
             { txtbPA, txtbSAK, txtbRA, txtbRS, txtbRK, txtbRK_COP, txtbRK_M, txtbRK_A1, txtbRK_A2, txtbRK_A3, txtbOR1, txtbOR2, txtbACC, txtbVisibleMemoryStart, txtbVisibleMemoryEnd };
             _viewModel.InitAfterInitializeComponent(displays);
 
+            this.Closing += OnClosing;
+
+            return;
+        }
+
+        private void OnClosing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            _viewModel.OnClosing(sender, e);
+
             return;
         }
 

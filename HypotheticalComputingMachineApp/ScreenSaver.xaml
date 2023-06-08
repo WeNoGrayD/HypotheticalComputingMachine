@@ -5,45 +5,68 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HypotheticalComputingMachineApp"
         mc:Ignorable="d"
-        Title="ScreenSaver" Height="450" Width="800"
+        Title="Программный модельный стенд ГВМ D1" Height="450" Width="800"
+        WindowStartupLocation="CenterScreen"
         AllowsTransparency="True" WindowStyle="None" Background="Transparent">
     <Grid>
 
-        <Path Fill="Green" Stroke="DarkGreen" StrokeThickness="5">
+        <Path Fill="Green" Stroke="DarkGreen" StrokeThickness="5" Panel.ZIndex="2">
             <Path.Data>
                 <PathGeometry>
                     
-                    <PathFigure IsClosed="True" StartPoint="200,250" >
+                    <PathFigure IsClosed="True" StartPoint="50,275" >
 
-                        <LineSegment Point="350,60"/>
-                        <LineSegment Point="300,350"/>
-                        <LineSegment Point="200,250"/>
-
-                    </PathFigure>
-                    
-                    <PathFigure IsClosed="False" IsFilled="False" StartPoint="300,350" >
-
-                        <LineSegment Point="500,280"/>
-                        <LineSegment Point="350,60"/>
+                        <LineSegment Point="200,85"/>
+                        <LineSegment Point="150,375"/>
+                        <LineSegment Point="50,275"/>
 
                     </PathFigure>
                     
-                    <PathFigure IsClosed="True" StartPoint="340,210" >
+                    <PathFigure IsClosed="False" IsFilled="False" StartPoint="150,375" >
 
-                        <ArcSegment Point="415,185" Size="3,2.5" SweepDirection="Clockwise"/>
+                        <LineSegment Point="350,305"/>
+                        <LineSegment Point="200,85"/>
 
                     </PathFigure>
                     
-                    <PathFigure IsClosed="True" IsFilled="True" StartPoint="350,180" >
+                    <PathFigure IsClosed="True" StartPoint="190,235" >
 
-                        <ArcSegment Point="390,170" Size="10,10" IsLargeArc="False" SweepDirection="Counterclockwise"/>
-                        <ArcSegment Point="350,180" Size="4,2" IsLargeArc="False" SweepDirection="Counterclockwise"/>
+                        <ArcSegment Point="265,210" Size="3,2.5" SweepDirection="Clockwise"/>
+
+                    </PathFigure>
+                    
+                    <PathFigure IsClosed="True" IsFilled="True" StartPoint="200,200" >
+
+                        <ArcSegment Point="241,193" Size="10,10" IsLargeArc="False" SweepDirection="Counterclockwise"/>
+                        <ArcSegment Point="200,200" Size="100,400" IsLargeArc="False" SweepDirection="Counterclockwise"/>
 
                     </PathFigure>
                     
                 </PathGeometry>
             </Path.Data>
         </Path>
-        
+
+        <Path Fill="LimeGreen" Panel.ZIndex="1">
+            <Path.Data>
+                <PathGeometry>
+
+                    <PathFigure IsClosed="True" IsFilled="True" StartPoint="150,375" >
+
+                        <LineSegment Point="350,305"/>
+                        <LineSegment Point="200,85"/>
+                        <LineSegment Point="150,375"/>
+
+                    </PathFigure>
+                    
+                </PathGeometry>
+            </Path.Data>
+        </Path>
+
+        <TextBlock Panel.ZIndex="1" Foreground="LimeGreen" FontSize="24" Margin="325, 80,0,0" >
+            <Run >Программный модельный стенд ГВМ D1</Run>
+            <LineBreak/>
+            <Run > Разработал ст. гр. ПОм-22 Оверчук И.Д.</Run>
+        </TextBlock>
+
     </Grid>
 </Window>

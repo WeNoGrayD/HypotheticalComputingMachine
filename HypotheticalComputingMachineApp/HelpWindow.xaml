@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:HypotheticalComputingMachineApp"
         mc:Ignorable="d"
         Title="Помощь пользователю в управлении программным модельным стендом ГВМ D1" Height="450" Width="800">
-    <ScrollViewer HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Visible">
-        <Label x:Name="txtbHelp"/>
+    <ScrollViewer VerticalScrollBarVisibility="Visible">
+        <TextBlock x:Name="txtbHelp" FontSize="20" FontFamily="TimesNewRoman" TextWrapping="WrapWithOverflow"></TextBlock>
     </ScrollViewer>
 </Window>
