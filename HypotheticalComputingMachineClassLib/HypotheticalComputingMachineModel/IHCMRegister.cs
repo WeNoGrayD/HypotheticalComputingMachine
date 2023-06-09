@@ -33,6 +33,8 @@ namespace HypotheticalComputingMachineClassLib.HypotheticalComputingMachineModel
             {
                 reg[j] = data[i];
             }
+            for (; j >= 0; j--)
+                reg[j] = default(T);
 
             return;
         }
