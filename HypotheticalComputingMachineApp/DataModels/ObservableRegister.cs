@@ -57,7 +57,7 @@ namespace HypotheticalComputingMachineApp.DataModels
         {
             this.PropertyChanged += (o, e) =>
             {
-                if (program.State == ProgramState.NotRunning || e.PropertyName != IndexerName)
+                if (((byte)program.State & 0b1) != 0 || e.PropertyName != IndexerName)
                     return;
 
                 Action setUpdated = null, prepareToNextCmdExec = null, unsetUpdated = null;
